@@ -1,13 +1,15 @@
 <template>
-	<h3>this is tabs component</h3>
-  <el-tabs type="card" @tab-click="handleClick">
-    <el-tab-pane label="User">User</el-tab-pane>
-    <el-tab-pane label="Config">Config</el-tab-pane>
-    <el-tab-pane label="Role">Role</el-tab-pane>
-    <el-tab-pane label="Task">Task</el-tab-pane>
-  </el-tabs>
 	<section>
-		<component :is="activeComponent"></component>
+		<h3>this is tabs component</h3>
+		<el-tabs type="card" @tab-click="handleClick">
+			<el-tab-pane label="User">User</el-tab-pane>
+			<el-tab-pane label="Config">Config</el-tab-pane>
+			<el-tab-pane label="Role">Role</el-tab-pane>
+			<el-tab-pane label="Task">Task</el-tab-pane>
+		</el-tabs>
+		<section>
+			<component :is="activeComponent"></component>
+		</section>
 	</section>
 </template>
 <script>
