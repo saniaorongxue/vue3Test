@@ -49,6 +49,29 @@ export default defineComponent({
 			}, 1000 * 3)
 		})
 
+		function commonFileList(data = {}) {
+			let url = '/api/commonlist'
+			return new Promise((resolve, reject) => {
+				fetch(url, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+						// 'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: JSON.stringify(data)
+				}).then(res => {
+					resolve(res)
+				}).catch(err => {
+					reject(err)
+				})
+			})
+		}
+
+		onUpdated(async () => {
+			let commonList = await commonFileList();
+			console.log(commonList)
+		})
+
 		return {
 			num,
 			context,
