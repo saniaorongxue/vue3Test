@@ -49,6 +49,13 @@ export default defineComponent({
 			}, 1000 * 3)
 		})
 
+		type resData = {
+			code?: number
+			message?: string
+			data?: any
+			[propname: string]: any
+		}
+
 		function commonFileList(data = {}) {
 			let url = '/api/commonlist'
 			return new Promise((resolve, reject) => {
@@ -68,7 +75,7 @@ export default defineComponent({
 		}
 
 		onUpdated(async () => {
-			let commonList = await commonFileList();
+			let commonList: resData = await commonFileList();
 			console.log(commonList)
 		})
 
