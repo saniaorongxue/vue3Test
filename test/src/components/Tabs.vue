@@ -1,4 +1,5 @@
 <template>
+
   <h3>this is tabs component</h3>
   <el-tabs type="card" @tab-click="handleClick">
     <el-tab-pane label="User">User</el-tab-pane>
@@ -9,6 +10,7 @@
   <section>
     <component :is="activeComponent"></component>
   </section>
+
 </template>
 <script>
 import { ref, reactive, defineAsyncComponent, markRaw } from 'vue';
